@@ -96,8 +96,31 @@ while (True):
     else:
         print ("** player 2 wins **")
     print("-------------------------------------")# with this line it is really fancy now!
-    
+#%% 
+import random
 
-    
+maxval=9
 
-  
+def genrand(max_value):
+    print ("---- starting a new game ---")
+    return random.randint(1,max_value)
+
+score = 0
+number =  genrand(maxval)
+
+while (True):    
+    val=input ("insert your guess: ") 
+    if val =="exit":
+        break
+    val = int (val)
+    if (val < number):
+        print ("Too low")
+    elif (val > number):
+        print ("Too high")
+    else:
+        print ("right!")
+        score+=1
+        print (f"your score is now {score}")        
+        number =  genrand(maxval)
+
+
